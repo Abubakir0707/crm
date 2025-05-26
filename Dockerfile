@@ -19,7 +19,6 @@ COPY . /app
 
 # Kerakli kutubxonalarni o'rnatish
 RUN pip install --upgrade pip && pip install -r requirements.txt
-RUN python3 manage.py collectstatic --noinput
 
 
 # Port ochish

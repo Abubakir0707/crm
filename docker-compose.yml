@@ -12,7 +12,7 @@ services:
     command: gunicorn crm.wsgi:application --bind 0.0.0.0:8000
     restart: always
     volumes:
-      - static_volume:/app/staticfiles
+      - static_volume:/app/static
 
 
   nginx:
@@ -24,7 +24,7 @@ services:
       - web
     volumes:
       - ./nginx/sites-available/crm.conf:/etc/nginx/conf.d/crm.conf
-      - static_volume:/staticfiles
+      - static_volume:/static
 
   db:
     image: postgres:16
